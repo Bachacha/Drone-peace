@@ -73,10 +73,7 @@ Go to your kafka folder (“kafka_2.12-2.1.0”) and enter the following command
 
 bin/kafka-topics.sh --create --zookeeper localhost:9092--replication-factor 1 --partitions 2 --topic DangerousPeople
 
-### 4. Go to Kafka folder
-cd Kafka
-
-### 5. Launch the Main file :
+### 4. Launch the Main file :
 sbt run
 
 
