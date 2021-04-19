@@ -36,3 +36,48 @@ This is not difficult to receive huge amount of data but it’s better to know h
 
 To make the Peacewatchers more efficient we need to add the drone battery consumption which will allows us to take actions based on battery status would be useful, we also can add the disk space, the temperature and its speed that information could provide a better control over the drone. 
 
+# Subject
+
+Peaceland is a country that takes great pride in its effort to bring peace, happyness, and harmony to all its citizens.
+To do so they heavily rely on their peacemakers. A governmental agency dedicated to make peace around the country. To do so they bring assistance to any agitated person and help them to recover peace. More generally they help citizen to stay in line with their country harmonious goal. To help its peacemakers squads, Peaceland engineers have created a working autonomous drone called peacewatcher. They need you to create the program that will receive and manage peacewatchers’s data.
+
+
+ # Implementation 
+ 
+ The goal is to write a poc demonstrating a working architecture of peaceland
+ 
+ ## Architecture
+ -Kafka
+ -Spark
+ 
+ # How to run our project ?
+ 
+## Requirements
+For this part, we need to have installed:
+
+kafka : version 2.12-2.1.0
+sbt (to compile scala project code)
+
+### 1. Launch zookeeper instance:
+Go to your kafka folder (“kafka_2.12-2.1.0”) and enter the following command:
+
+bin/zookeeper-server-start.sh ./config/zookeeper.properties
+
+### 2. Launch kafka (in another terminal):
+Go to your kafka folder (“kafka_2.12-2.1.0”) and enter the following command:
+
+bin/kafka-server-start.sh ./config/server.properties
+
+### 3. Create topic DangerousPeople with a replication factor to 1 and a least 2 partitions (in another terminal).
+Go to your kafka folder (“kafka_2.12-2.1.0”) and enter the following command:
+
+bin/kafka-topics.sh --create --zookeeper localhost:9092--replication-factor 1 --partitions 2 --topic DangerousPeople
+
+### 4. Launch the Main file :
+sbt run
+
+
+# Authors
+Hassan BACHACHA
+Emeric BERTIN
+Philipe CHEN
